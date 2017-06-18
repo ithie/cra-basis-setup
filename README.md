@@ -29,7 +29,7 @@ Steps i made
 * `yarn flow -- init`
 
 
-## Changes of this fork:
+## Differences to the forked base-project
 
 This fork enhances the cra-basis-setup with a running backstop-js config and a junit-compatible coverage-report.
 Additional tasks:
