@@ -1,8 +1,8 @@
 Headline Example
 
-    <Headline>Test</Headline>
+    <Headline>Default Headline</Headline>
     
     
 Headline Example2
 
-    <Headline>Test2</Headline>
+    <Headline primary>Primary Headline</Headline>

@@ -3,28 +3,44 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "styled-components": "^2.0.0"
   },
   "devDependencies": {
+    "backstopjs": "^2.6.11",
     "flow-bin": "^0.47.0",
+    "husky": "^0.13.4",
+    "jest-junit-reporter": "^1.1.0",
+    "lint-staged": "^3.6.0",
+    "lodash": "^4.10.0",
+    "prettier": "^1.4.2",
     "react-scripts": "1.0.7",
     "react-styleguidist": "^5.3.2",
     "react-test-renderer": "^15.5.4",
-    "babel-eslint": "^7.1.1",
-    "eslint": "^2.7.0",
-    "eslint-config-airbnb": "^6.2.0",
-    "eslint-plugin-react": "^4.3.0",
-    "lint-staged": "^3.4.0",
     "webpack": "^2.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "visreg:ref": "backstop reference --config=test/backstop.config.js",
+    "visreg:test": "backstop test --config=test/backstop.config.js",
+    "visreg:open": "backstop openReport --config=test/backstop.config.js",
+    "visreg:approve": "backstop approve --config=test/backstop.config.js",
+    "coverage": "react-scripts test --coverage",
+    "coverage:ci": "react-scripts test --coverage --testResultsProcessor=./node_modules/jest-junit-reporter",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
     "precommit": "lint-staged",
-    "styleguide": "NODE_ENV=dev styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "prettier": "prettier --write --print-width 120 --single-quote --trailing-comma es5 'src/**/*.js'",
+    "flow": "flow"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --print-width 120 --single-quote --trailing-comma es5",
+      "git add"
+    ]
   }
 }
