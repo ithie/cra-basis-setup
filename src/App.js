@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Headline from './components/atoms/Headline/Headline';
 
+import TileMap from './components/molecules/TileMap/TileMap';
+
 class App extends Component {
   render() {
     return (
@@ -11,6 +13,7 @@ class App extends Component {
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <TileMap />
       </div>
     );
   }
