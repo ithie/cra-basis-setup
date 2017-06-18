@@ -14,19 +14,12 @@ Other tasks:
 - `yarn start` // to start dev server
 - `yarn test`  // to run javascript tests
 - `yarn coverage`  // run javascript tests & print coverage
-- `yarn coverage:ci`  // run javascript tests & create xml-report for build-servers
 - `yarn build` // to produce minified production build 
 - `yarn styleguide:build` // to produce standalone styleguide build
-- `yarn visreg:ref` // to create reference-screenshots for visual regression tests
-- `yarn visreg:test` // to test the current application
-- `yarn visreg:open` // to start the backstop server
-- `yarn visreg:approve` // to approve changes for visual regression tests
 
 
 TODO:
 * add `jest-styled-components` as soon as it supports styled-components v2
-
-
 
 
 Steps i made
@@ -34,3 +27,16 @@ Steps i made
 * `yarn add styled-components`
 * `yarn add --dev react-styleguidist react-test-renderer webpack flow-bin`
 * `yarn flow -- init`
+
+
+## Changes of this fork:
+
+This fork enhances the cra-basis-setup with a running backstop-js config and a junit-compatible coverage-report.
+Additional tasks:
+
+- `yarn coverage:ci`  // run javascript tests & create junit-compatible xml-report
+- `yarn visreg:ref` // to create reference-screenshots for visual regression tests
+- `yarn visreg:test` // to test the current application
+- `yarn visreg:open` // to start the backstop server
+- `yarn visreg:approve` // to approve changes for visual regression tests
+
