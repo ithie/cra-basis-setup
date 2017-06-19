@@ -9,7 +9,7 @@ const Tile = styled.div`
   
   left: 2px;
   
-  box-shadow: inset 0 0 10px #0f0;
+  box-shadow: inset 0 0 10px ${props => (props.isActive ? '#000' : '#0f0')};
   
   margin-top: 30px;
   width: ${width}px;
@@ -43,10 +43,12 @@ Tile.displayName = 'atoms/Tile';
 
 Tile.propTypes = {
   color: PropTypes.string,
+  isActive: PropTypes.bool,
 };
 
 Tile.defaultProps = {
   color: '#6C6',
+  isActive: false,
 };
 
 export default Tile;

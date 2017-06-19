@@ -8,7 +8,7 @@ const HalfTile = styled.div`
   
   left: 2px;
   
-  box-shadow: inset 0 0 10px #0f0;
+  box-shadow: inset 0 0 10px ${props => (props.isActive ? '#000' : '#0f0')};
   
   margin-top: 30px;
   width: ${width / 2}px;
@@ -44,12 +44,14 @@ HalfTile.propTypes = {
   color: PropTypes.string,
   left: PropTypes.bool,
   right: PropTypes.bool,
+  isActive: PropTypes.bool,
 };
 
 HalfTile.defaultProps = {
   color: '#6C6',
   left: true,
   right: true,
+  isActive: false,
 };
 
 export default HalfTile;

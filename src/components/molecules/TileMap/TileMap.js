@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import TileProvider, { tileTypes } from '../../containers/TileProvider/TileProvider';
@@ -31,52 +31,66 @@ const Even = styled.div`
   }
 `;
 
-const TileMap = () =>
-  <Map>
-    <Odd>
-      <TileProvider type={tileTypes.Empty} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Empty} />
-    </Odd>
-    <Even>
-      <TileProvider type={tileTypes.Empty} halfTile left />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.LightForrest} />
-      <TileProvider type={tileTypes.Forrest} />
-      <TileProvider type={tileTypes.DarkForrest} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Empty} halfTile right />
-    </Even>
-    <Odd>
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Settlement} />
-      <TileProvider type={tileTypes.Village} />
-      <TileProvider type={tileTypes.Town} />
-      <TileProvider type={tileTypes.OpenCountry} />
-      <TileProvider type={tileTypes.Sea} />
-    </Odd>
-    <Even>
-      <TileProvider type={tileTypes.Empty} halfTile left />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.LightForrest} />
-      <TileProvider type={tileTypes.Forrest} />
-      <TileProvider type={tileTypes.DarkForrest} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Empty} halfTile right />
-    </Even>
-    <Odd>
-      <TileProvider type={tileTypes.Empty} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Sea} />
-      <TileProvider type={tileTypes.Empty} />
-    </Odd>
-  </Map>;
+export default class TileMap extends Component {
+  static displayName = 'molecules/TileMap';
 
-TileMap.displayName = 'molecules/TileMap';
+  constructor(props) {
+    super(props);
 
-export default TileMap;
+    this.state = { activeTile: null };
+  }
+
+  handle = tile =>
+    this.setState({
+      activeTile: tile && tile !== this.state.activeTile ? tile : null,
+    });
+
+  render() {
+    return (
+      <Map>
+        <Odd>
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} />
+        </Odd>
+        <Even>
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} halfTile left />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.LightForrest} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Forrest} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.DarkForrest} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} halfTile right />
+        </Even>
+        <Odd>
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Settlement} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Village} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Town} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.OpenCountry} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+        </Odd>
+        <Even>
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} halfTile left />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.LightForrest} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Forrest} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.DarkForrest} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} halfTile right />
+        </Even>
+        <Odd>
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Sea} />
+          <TileProvider handle={this.handle} activeTile={this.state.activeTile} type={tileTypes.Empty} />
+        </Odd>
+      </Map>
+    );
+  }
+}
