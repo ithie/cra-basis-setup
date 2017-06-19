@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "backstopjs": "^2.6.11",
+    "eslint-config-airbnb": "^15.0.1",
     "flow-bin": "^0.47.0",
     "husky": "^0.13.4",
     "jest-junit-reporter": "^1.1.0",

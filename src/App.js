@@ -8,11 +8,8 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Headline>Welcome to Reasdfsdfsdfsct</Headline>
+          <Headline>Hexagon Strategy Game</Headline>
         </div>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <TileMap />
       </div>
     );
