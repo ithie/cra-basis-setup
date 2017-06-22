@@ -40,3 +40,15 @@ Additional tasks:
 - `yarn visreg:open` // to start the backstop server
 - `yarn visreg:approve` // to approve changes for visual regression tests
 
+## Code-Generator
+
+- `yarn run create [type] [name]` // to generate Atoms, Molecules, Constants, Containers etc.
+
+Valid Types are:
+- atom
+- molecule
+- organism
+- template
+- layout
+- constant
+- container
