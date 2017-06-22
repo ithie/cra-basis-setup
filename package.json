@@ -35,7 +35,8 @@
     "styleguide:build": "styleguidist build",
     "precommit": "lint-staged",
     "prettier": "prettier --write --print-width 120 --single-quote --trailing-comma es5 'src/**/*.js'",
-    "flow": "flow"
+    "flow": "flow",
+    "create": "node scripts/create"
   },
   "lint-staged": {
     "*.js": [
