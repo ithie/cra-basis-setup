@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 export const width = 100;
@@ -14,6 +14,13 @@ const Tile = styled.div`
   margin-top: 30px;
   width: ${width}px;
   height: 80px;
+  ${props =>
+    props.background !== ''
+      ? css`
+        background-image: url('${props.background}');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;`
+      : ''}
   background-color: ${props => props.color};
   
   :before {
@@ -42,11 +49,13 @@ const Tile = styled.div`
 Tile.displayName = 'atoms/Tile';
 
 Tile.propTypes = {
+  background: PropTypes.string,
   color: PropTypes.string,
   isActive: PropTypes.bool,
 };
 
 Tile.defaultProps = {
+  background: '',
   color: '#6C6',
   isActive: false,
 };

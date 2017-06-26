@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Source from '../../../../images/settlement.png';
 
 import Tile from '../Tile';
 
-const Settlement = ({ isActive }) => <Tile isActive={isActive}>Settlement</Tile>;
+const Settlement = ({ isActive }) =>
+  <Tile background={Source} isActive={isActive}>
+    Settlement
+  </Tile>;
 
 Settlement.propTypes = {
   isActive: PropTypes.bool,
