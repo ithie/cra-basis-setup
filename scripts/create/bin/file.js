@@ -33,7 +33,7 @@ var readFile = function readFile(dir, filename) {
 };
 
 var replaceContent = function replaceContent(content, type, name) {
-  return content.replace(/ComponentType/g, name).replace(/Component/g, type).replace(/constant/g, name);
+  return content.replace(/ComponentType/g, type).replace(/Component/g, name).replace(/constant/g, name);
 };
 
 var getReadme = function getReadme(name) {
