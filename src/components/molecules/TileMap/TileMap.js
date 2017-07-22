@@ -50,34 +50,40 @@ export default class TileMap extends Component {
     this.state = { activeTile: null };
   }
 
-  getMap = () =>
+  getEvenOdd = rowIndex => (rowIndex % 2 === 0 ? Odd : Even);
+
+  getTileType = column => (typeof tiles[column] !== 'undefined' ? tiles[column] : tileTypes.Empty);
+
+  getMapRowCol = (row, rowIndex, column, columnIndex) =>
     React.createElement(
-      Map,
-      {},
-      _.map(tileMap, (row, rowIndex) =>
-        React.createElement(
-          rowIndex % 2 === 0 ? Odd : Even,
-          {
-            key: rowIndex,
-          },
-          _.map(row, (column, columnIndex) =>
-            React.createElement(
-              TileProvider,
-              {
-                key: `${rowIndex}:${columnIndex}`,
-                type: typeof tiles[column] !== 'undefined' ? tiles[column] : tileTypes.Empty,
-                handle: this.handle,
-                activeTile: this.state.activeTile,
-                halfTile: rowIndex % 2 === 1 && (columnIndex === 0 || columnIndex === row.length - 1),
-                left: rowIndex % 2 === 0 && columnIndex === 0,
-                right: rowIndex % 2 === 0 && columnIndex === row.length - 1,
-              },
-              ''
-            )
-          )
-        )
-      )
+      TileProvider,
+      {
+        key: `${_.uniqueId('column')}:${rowIndex}:${columnIndex}`,
+        type: this.getTileType(),
+        handle: this.handle,
+        activeTile: this.state.activeTile,
+        halfTile: rowIndex % 2 === 1 && (columnIndex === 0 || columnIndex === row.length - 1),
+        left: rowIndex % 2 === 0 && columnIndex === 0,
+        right: rowIndex % 2 === 0 && columnIndex === row.length - 1,
+      },
+      ''
     );
+
+  getMapRowCols = (row, rowIndex) =>
+    _.map(row, (column, columnIndex) => this.getMapRowCol(row, rowIndex, column, columnIndex));
+
+  getMapRow = (row, rowIndex) =>
+    React.createElement(
+      this.getEvenOdd(rowIndex),
+      {
+        key: `${_.uniqueId('row')}:${rowIndex}`,
+      },
+      this.getMapRowCols(row, rowIndex)
+    );
+
+  getMapRows = () => _.map(tileMap, this.getMapRow);
+
+  getMap = () => React.createElement(Map, {}, this.getMapRows());
 
   handle = tile =>
     this.setState({
