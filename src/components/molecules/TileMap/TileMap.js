@@ -59,7 +59,7 @@ export default class TileMap extends Component {
       TileProvider,
       {
         key: `${_.uniqueId('column')}:${rowIndex}:${columnIndex}`,
-        type: this.getTileType(),
+        type: this.getTileType(column),
         handle: this.handle,
         activeTile: this.state.activeTile,
         halfTile: rowIndex % 2 === 1 && (columnIndex === 0 || columnIndex === row.length - 1),
