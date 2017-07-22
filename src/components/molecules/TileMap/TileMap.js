@@ -76,7 +76,7 @@ export default class TileMap extends Component {
 
   getMapRows = mapTiles => _.map(mapTiles, this.getMapRow);
 
-  getMap = () => React.createElement(Map, {}, this.getMapRows());
+  getMap = defaultMap => React.createElement(Map, {}, this.getMapRows(defaultMap));
 
   handle = tile =>
     this.setState({
