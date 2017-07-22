@@ -6,15 +6,336 @@ exports[`renderd app snapshot 1`] = `
     <h1
       className="sc-bdVaJa ccXnHE"
     >
-      Welcome to Reasdfsdfsdfsct
+      Hexagon Strategy Game
     </h1>
   </div>
-  <p>
-    To get started, edit 
-    <code>
-      src/App.js
-    </code>
-     and save to reload.
-  </p>
+  <div
+    className="sc-bxivhb gYzGMS"
+  >
+    <div
+      className="sc-ifAKCX bKxnCy"
+    >
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH jZTaDt"
+          color="#ffffff"
+        />
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH jZTaDt"
+          color="#ffffff"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-EHOje efBZZM"
+    >
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-htpNat ZLpVN"
+          color="#ffffff"
+        />
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH jPXUbX"
+          color="#9ACD32"
+        >
+          Forrest
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH eFnbYV"
+          color="#6C6"
+        >
+          Forrest
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH Oxhea"
+          color="#458B00"
+        >
+          DarkForrest
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-htpNat ZLpVN"
+          color="#ffffff"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX bKxnCy"
+    >
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH dOjYFg"
+          color="#6C6"
+        >
+          Settlement
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kePIIH"
+          color="#6C6"
+        >
+          Village
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kOmorM"
+          color="#6C6"
+        >
+          Town
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH eFnbYV"
+          color="#6C6"
+        >
+          OpenCountry
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-EHOje efBZZM"
+    >
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-htpNat ZLpVN"
+          color="#ffffff"
+        />
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH jPXUbX"
+          color="#9ACD32"
+        >
+          Forrest
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH eFnbYV"
+          color="#6C6"
+        >
+          Forrest
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH Oxhea"
+          color="#458B00"
+        >
+          DarkForrest
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-htpNat ZLpVN"
+          color="#ffffff"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX bKxnCy"
+    >
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH jZTaDt"
+          color="#ffffff"
+        />
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH kHqOMB"
+          color="#00BFFF"
+        >
+          Sea
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH jZTaDt"
+          color="#ffffff"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;

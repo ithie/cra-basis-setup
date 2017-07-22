@@ -58,7 +58,7 @@ export default class TileMap extends Component {
     React.createElement(
       TileProvider,
       {
-        key: `${_.uniqueId('column')}:${rowIndex}:${columnIndex}`,
+        key: `column:${rowIndex}:${columnIndex}`,
         type: this.getTileType(column),
         handle: this.handle,
         activeTile: this.state.activeTile,
@@ -76,7 +76,7 @@ export default class TileMap extends Component {
     React.createElement(
       this.getEvenOdd(rowIndex),
       {
-        key: `${_.uniqueId('row')}:${rowIndex}`,
+        key: `row:${rowIndex}:`,
       },
       this.getMapRowCols(row, rowIndex)
     );
@@ -85,10 +85,11 @@ export default class TileMap extends Component {
 
   getMap = () => React.createElement(Map, {}, this.getMapRows());
 
-  handle = tile =>
+  handle = tile => {
     this.setState({
       activeTile: tile && tile !== this.state.activeTile ? tile : null,
     });
+  };
 
   render() {
     return this.getMap();
