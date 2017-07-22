@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
-import tiles, { E, S, LF, F, DF, OC, SM, T, V } from '../../../constants/enums/Tiles';
+import tiles from '../../../constants/enums/tiles';
+import defaultMap from '../../../constants/maps/defaultMap';
 
 import TileProvider, { tileTypes } from '../../containers/TileProvider/TileProvider';
 
@@ -32,14 +33,6 @@ const Even = styled.div`
     float: left;
   }
 `;
-
-const tileMap = [
-  [E, S, S, S, S, E],
-  [E, S, LF, F, DF, S, E],
-  [S, SM, V, T, OC, S],
-  [E, S, LF, F, DF, S, E],
-  [E, S, S, S, S, E],
-];
 
 export default class TileMap extends Component {
   static displayName = 'molecules/TileMap';
@@ -81,17 +74,16 @@ export default class TileMap extends Component {
       this.getMapRowCols(row, rowIndex)
     );
 
-  getMapRows = () => _.map(tileMap, this.getMapRow);
+  getMapRows = mapTiles => _.map(mapTiles, this.getMapRow);
 
   getMap = () => React.createElement(Map, {}, this.getMapRows());
 
-  handle = tile => {
+  handle = tile =>
     this.setState({
       activeTile: tile && tile !== this.state.activeTile ? tile : null,
     });
-  };
 
   render() {
-    return this.getMap();
+    return this.getMap(defaultMap);
   }
 }
