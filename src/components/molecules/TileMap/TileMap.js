@@ -9,8 +9,8 @@ import TileProvider, { tileTypes } from '../../containers/TileProvider/TileProvi
 const Map = styled.div`
   display: block;
   position: relative;
-  height: 600px;
-  width: 600px;
+  height: ${props => (props.rows ? `${props.rows * 100 + 100}px` : '600px')};
+  width: ${props => (props.cols ? `${props.cols * 100}px` : '600px')};
 `;
 
 const Odd = styled.div`
@@ -20,14 +20,14 @@ const Odd = styled.div`
   > div {
     float: left;
   }
-  width: 600px;
+  width: ${props => (props.cols ? `${props.cols * 100}px` : '600px')};
   clear: left;
 `;
 
 const Even = styled.div`
   display: block;
   position: relative;
-  width: 600px;
+  width: ${props => (props.cols ? `${(props.cols - 1) * 100}px` : '600px')};
   top: 4px;
   > div {
     float: left;
@@ -70,13 +70,22 @@ export default class TileMap extends Component {
       this.getEvenOdd(rowIndex),
       {
         key: `row:${rowIndex}:`,
+        cols: row.length,
       },
       this.getMapRowCols(row, rowIndex)
     );
 
   getMapRows = mapTiles => _.map(mapTiles, this.getMapRow);
 
-  getMap = mapTiles => React.createElement(Map, {}, this.getMapRows(mapTiles));
+  getMap = mapTiles =>
+    React.createElement(
+      Map,
+      {
+        rows: mapTiles.length,
+        cols: mapTiles[0].length,
+      },
+      this.getMapRows(mapTiles)
+    );
 
   handle = tile =>
     this.setState({
