@@ -17,11 +17,6 @@ Other tasks:
 - `yarn build` // to produce minified production build 
 - `yarn styleguide:build` // to produce standalone styleguide build
 
-
-TODO:
-* add `jest-styled-components` as soon as it supports styled-components v2
-
-
 Steps i made
 * `create-react-app cra-basis-setup`
 * `yarn add styled-components`

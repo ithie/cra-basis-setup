@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Headline snapshot 1`] = `
+.c0 {
+  font-size: 1.5em;
+  text-align: center;
+  color: #000;
+}
+
 <h1
-  className="sc-bdVaJa ccXnHE"
+  className="c0"
 >
   Test
 </h1>

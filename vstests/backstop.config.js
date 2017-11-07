@@ -102,6 +102,8 @@ var backStopConfig = {
       })
     );
   },
+  asyncCaptureLimit: 10,
+  asyncCompareLimit: 200,
   paths: {
     bitmaps_reference: 'test/backstop_data/bitmaps_reference',
     bitmaps_test: 'test/backstop_data/bitmaps_test',
@@ -110,7 +112,7 @@ var backStopConfig = {
     ci_report: 'test/backstop_data/ci_report',
   },
   casperFlags: [],
-  engine: 'phantomjs',
+  engine: 'chrome',
   report: ['ci'],
   debug: true,
 };
