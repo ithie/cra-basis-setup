@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Source from '../../../../images/settlement.png';
+import Source from './Settlement.png';
 
 import Tile from '../Tile';
 

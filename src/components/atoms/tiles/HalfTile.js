@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-import Tile from './Tile';
+import { BaseTile } from './Tile';
 
 import { width, borderHeight } from '../../../constants/tileSizes';
 import { blue100 } from '../../../constants/colors/colors';
 
-const HalfTile = Tile.extend`
+const HalfTile = BaseTile.extend`
   width: ${width / 2}px;
   
   :before {

@@ -1,10 +1,11 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { black, teal800, blue100 } from '../../../constants/colors/colors';
 import { width, borderHeight } from '../../../constants/tileSizes';
 
-export const Tile = styled.div`
+export const BaseTile = styled.div`
   position: relative;
   display: block;
   
@@ -13,7 +14,7 @@ export const Tile = styled.div`
   box-shadow: inset 0 0 10px ${props => (props.isActive ? black : teal800)};
   
   font-family: "Arial";
-  font-size: ${width / 4}px;
+  font-size: ${width / 5}px;
   color: ${black};
   
   margin-top: ${borderHeight}px;
@@ -51,12 +52,18 @@ export const Tile = styled.div`
   }
 `;
 
+const Tile = ({ isActive, background, color, children }) =>
+  <BaseTile isActive={isActive} color={color} background={background}>
+    {children}
+  </BaseTile>;
+
 Tile.displayName = 'atoms/Tile';
 
 Tile.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   isActive: PropTypes.bool,
+  children: PropTypes.any,
 };
 
 Tile.defaultProps = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Source from '../../../../images/village.jpg';
+import Source from './Village.png';
 
 import Tile from '../Tile';
 
