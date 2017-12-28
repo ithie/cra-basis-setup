@@ -27,9 +27,6 @@ export default class TileProvider extends Component {
   constructor(props) {
     super(props);
 
-    if (props.halfTile) {
-      console.log('PROPS', props.left, props.right);
-    }
     this.key = _.uniqueId('tile');
   }
 

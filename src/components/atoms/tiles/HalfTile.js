@@ -27,7 +27,7 @@ const HalfTile = Tile.extend`
       position: absolute;
       bottom: -${borderHeight}px;
       left: 0;
-      border-top: ${borderHeight}px solid transparent;
+      border-top: ${borderHeight}px solid ${props => props.color};
       border-left: ${props => (props.left ? `${width / 2}px solid ${props.color};` : '0')};
       border-right: ${props => (props.right ? `${width / 2}px solid ${props.color};` : '0')};
       border-bottom: 0;
