@@ -1,19 +1,24 @@
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const width = 100;
+import { black, teal800, blue100 } from '../../../constants/colors/colors';
+import { width, borderHeight } from '../../../constants/tileSizes';
 
-const Tile = styled.div`
+export const Tile = styled.div`
   position: relative;
   display: block;
   
   left: 2px;
   
-  box-shadow: inset 0 0 10px ${props => (props.isActive ? '#000' : '#0f0')};
+  box-shadow: inset 0 0 10px ${props => (props.isActive ? black : teal800)};
   
-  margin-top: 30px;
+  font-family: "Arial";
+  font-size: ${width / 4}px;
+  color: ${black};
+  
+  margin-top: ${borderHeight}px;
   width: ${width}px;
-  height: 80px;
+  height: ${width - borderHeight}px;
   ${props =>
     props.background !== ''
       ? css`
@@ -26,11 +31,11 @@ const Tile = styled.div`
   :before {
       content: " ";
       width: 0; height: 0;
-      border-bottom: 30px solid ${props => props.color};
+      border-bottom: ${borderHeight}px solid ${props => props.color};
       border-left: ${width / 2}px solid transparent;
       border-right: ${width / 2}px solid transparent;
       position: absolute;
-      top: -30px;
+      top: -${borderHeight}px;
       left: 0;
   }
   
@@ -38,9 +43,9 @@ const Tile = styled.div`
       content: "";
       width: 0;
       position: absolute;
-      bottom: -30px;
+      bottom: -${borderHeight}px;
       left: 0;
-      border-top: 30px solid ${props => props.color};
+      border-top: ${borderHeight}px solid ${props => props.color};
       border-left: ${width / 2}px solid transparent;
       border-right: ${width / 2}px solid transparent;
   }
@@ -56,7 +61,7 @@ Tile.propTypes = {
 
 Tile.defaultProps = {
   background: '',
-  color: '#6C6',
+  color: blue100,
   isActive: false,
 };
 

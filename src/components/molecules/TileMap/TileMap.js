@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
+
+import TileProvider from '../../containers/TileProvider/TileProvider';
+
 import tiles from '../../../constants/enums/tiles';
+import tileTypes from '../../../constants/enums/tileTypes';
 import defaultMap from '../../../constants/maps/defaultMap';
 
-import TileProvider, { tileTypes } from '../../containers/TileProvider/TileProvider';
+import { width } from '../../../constants/tileSizes';
 
 const Map = styled.div`
   display: block;
   position: relative;
-  height: ${props => (props.rows ? `${props.rows * 100 + 100}px` : '600px')};
-  width: ${props => (props.cols ? `${props.cols * 100}px` : '600px')};
+  height: ${props => (props.rows ? `${props.rows * width + width}px` : '600px')};
+  width: ${props => (props.cols ? `${props.cols * width}px` : '600px')};
 `;
 
 const Odd = styled.div`
@@ -20,14 +24,14 @@ const Odd = styled.div`
   > div {
     float: left;
   }
-  width: ${props => (props.cols ? `${props.cols * 100}px` : '600px')};
+  width: ${props => (props.cols ? `${props.cols * width}px` : '600px')};
   clear: left;
 `;
 
 const Even = styled.div`
   display: block;
   position: relative;
-  width: ${props => (props.cols ? `${(props.cols - 1) * 100}px` : '600px')};
+  width: ${props => (props.cols ? `${(props.cols - 1) * width}px` : '600px')};
   top: 4px;
   > div {
     float: left;
@@ -47,8 +51,8 @@ export default class TileMap extends Component {
 
   getTileType = column => (typeof tiles[column] !== 'undefined' ? tiles[column] : tileTypes.Empty);
 
-  getMapRowCol = (row, rowIndex, column, columnIndex) =>
-    React.createElement(
+  getMapRowCol = (row, rowIndex, column, columnIndex) => {
+    return React.createElement(
       TileProvider,
       {
         key: `column:${rowIndex}:${columnIndex}`,
@@ -56,11 +60,12 @@ export default class TileMap extends Component {
         handle: this.handle,
         activeTile: this.state.activeTile,
         halfTile: rowIndex % 2 === 1 && (columnIndex === 0 || columnIndex === row.length - 1),
-        left: rowIndex % 2 === 0 && columnIndex === 0,
-        right: rowIndex % 2 === 0 && columnIndex === row.length - 1,
+        left: columnIndex === 0,
+        right: columnIndex === row.length - 1,
       },
       ''
     );
+  };
 
   getMapRowCols = (row, rowIndex) =>
     _.map(row, (column, columnIndex) => this.getMapRowCol(row, rowIndex, column, columnIndex));

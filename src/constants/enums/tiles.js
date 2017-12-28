@@ -1,4 +1,4 @@
-import { tileTypes } from '../../components/containers/TileProvider/TileProvider';
+import tileTypes from './tileTypes';
 
 export const E = 'E';
 export const S = 'S';

@@ -1,40 +1,36 @@
-import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { width } from './Tile';
 
-const HalfTile = styled.div`
-  position: relative;
-  display: block;
-  
-  left: 2px;
-  
-  box-shadow: inset 0 0 10px ${props => (props.isActive ? '#000' : '#0f0')};
-  
-  margin-top: 30px;
+import Tile from './Tile';
+
+import { width, borderHeight } from '../../../constants/tileSizes';
+import { blue100 } from '../../../constants/colors/colors';
+
+const HalfTile = Tile.extend`
   width: ${width / 2}px;
-  height: 80px;
-  background-color: ${props => props.color};
   
   :before {
       content: " ";
-      width: 0; height: 0;
-      border-bottom: 30px solid ${props => props.color};
-      ${props => props.right && css`border-left: ${width / 2}px solid transparent;`}
-      ${props => props.left && css`border-right: ${width / 2}px solid transparent;`}
+      width: 0;
+      height: 0;
       position: absolute;
-      top: -30px;
+      top: -${borderHeight}px;
       left: 0;
+      border-bottom: 0;
+      border-right: ${props => (props.right ? `${width / 2}px solid ${props.color}` : '0')};
+      border-left: ${props => (props.left ? `${width / 2}px solid ${props.color}` : '0')};
+      border-top: ${borderHeight}px solid transparent;
   }
 
   :after {
-      content: "";
+      content: " ";
       width: 0;
       position: absolute;
-      bottom: -30px;
+      bottom: -${borderHeight}px;
       left: 0;
-      border-top: 30px solid ${props => props.color};
-      ${props => props.right && css`border-left: ${width / 2}px solid transparent;`}
-      ${props => props.left && css`border-right: ${width / 2}px solid transparent;`}
+      border-top: ${borderHeight}px solid transparent;
+      border-left: ${props => (props.left ? `${width / 2}px solid ${props.color};` : '0')};
+      border-right: ${props => (props.right ? `${width / 2}px solid ${props.color};` : '0')};
+      border-bottom: 0;
   }
 `;
 
@@ -48,9 +44,9 @@ HalfTile.propTypes = {
 };
 
 HalfTile.defaultProps = {
-  color: '#6C6',
-  left: true,
-  right: true,
+  color: blue100,
+  left: false,
+  right: false,
   isActive: false,
 };
 
