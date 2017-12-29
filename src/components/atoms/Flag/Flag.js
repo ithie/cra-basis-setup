@@ -7,7 +7,7 @@ import { width } from '../../../constants/tileSizes';
 const Wrapper = styled.div`
   display: block;
   position: absolute;
-  top: ${width / 10}px;
+  top: ${width / 4}px;
   left: ${width / 10}px;
 `;
 
@@ -18,22 +18,22 @@ const InnerFlag = styled.div`
     display: block;
     position: relative;
     background-color: ${props => props.color};
-    width: ${width / 5}px;
+    width: ${props => props.troops * width / 20}px;
     height: ${width / 10}px;
   }
   .second {
     display: block;
     position: relative;
     background-color: white;
-    width: ${width / 5}px;
+    width: ${props => props.troop * width / 20}px;
     height: ${width / 10}px;
   }
 `;
 
-const Flag = ({ color }) => {
+const Flag = ({ color, troops }) => {
   return (
     <Wrapper>
-      <InnerFlag color={color}>
+      <InnerFlag color={color} troops={troops}>
         <div className="first" />
         <div className="second" />
       </InnerFlag>
@@ -43,10 +43,12 @@ const Flag = ({ color }) => {
 
 Flag.propTypes = {
   color: PropTypes.string,
+  troops: PropTypes.number,
 };
 
 Flag.defaultProps = {
   color: 'blue',
+  troops: 10,
 };
 
 export default Flag;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Headline from './components/atoms/Headline/Headline';
 
-import TileMap from './components/molecules/TileMap/TileMap';
+import Interface from './components/organisms/Interface/Interface';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
         <div>
           <Headline>Hexagon Strategy Game</Headline>
         </div>
-        <TileMap />
+        <Interface />
       </div>
     );
   }
