@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import Flag from '../../atoms/Flag/Flag';
 import tiles from '../../atoms/tiles/tiles';
 
 export default class TileProvider extends Component {
@@ -34,6 +35,7 @@ export default class TileProvider extends Component {
     const { handle, activeTile, type, halfTile, left, right } = this.props;
     const elementProps = {
       isActive: activeTile === this.key,
+      children: <Flag color="blue" />,
     };
 
     return (

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Tile from '../Tile';
 import HalfTile from '../HalfTile';
 
-const Sea = ({ halfTile, left, right }) =>
-  halfTile ? <HalfTile color="#00BFFF" left={left} right={right}>Sea</HalfTile> : <Tile color="#00BFFF">Sea</Tile>;
+const Sea = ({ halfTile, left, right, children }) =>
+  halfTile ? <HalfTile color="#00BFFF" left={left} right={right} /> : <Tile color="#00BFFF" children={children} />;
 
 Sea.displayName = 'atoms/Sea';
 

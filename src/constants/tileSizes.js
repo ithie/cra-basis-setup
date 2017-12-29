@@ -1,4 +1,4 @@
-export const width = 60;
+export const width = 80;
 export const borderHeight = width / 4;
 
 export default {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Tile from '../Tile';
 
-const OpenCountry = ({ isActive }) => <Tile isActive={isActive}>Open Country</Tile>;
+const OpenCountry = ({ isActive, children }) => <Tile color={'#71ce3b'} isActive={isActive} children={children} />;
 
 OpenCountry.displayName = 'atoms/OpenCountry';
 

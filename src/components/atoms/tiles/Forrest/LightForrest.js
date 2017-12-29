@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Tile from '../Tile';
 
-const LightForrest = ({ isActive }) => <Tile color={'#9ACD32'} isActive={isActive}>Light Forrest</Tile>;
+const LightForrest = ({ isActive, children }) => <Tile color={'#71ce3b'} isActive={isActive} children={children} />;
 
 LightForrest.propTypes = {
   isActive: PropTypes.bool,
